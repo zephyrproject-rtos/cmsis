@@ -44,8 +44,12 @@ extern    "C"
 #define MASK_IF_NON_ZERO(x) (x) != 0 ? ~0 : 0
 #define SELECT_USING_MASK(mask, a, b) ((mask) & (a)) ^ (~(mask) & (b))
 
+#ifndef MAX
 #define MAX(A,B) ((A) > (B) ? (A) : (B))
+#endif
+#ifndef MIN
 #define MIN(A,B) ((A) < (B) ? (A) : (B))
+#endif
 #define CLAMP(x, h, l) MAX(MIN((x), (h)), (l))
 
 /**
