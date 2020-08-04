@@ -12,5 +12,5 @@ zephyr_library_sources(
   arm_pid_reset_q31.c
   )
 
-zephyr_library_sources_ifdef(CMSIS_DSP_TABLES_ARM_SIN_COS_F32 arm_sin_cos_f32.c)
-zephyr_library_sources_ifdef(CMSIS_DSP_TABLES_ARM_SIN_COS_Q31 arm_sin_cos_q31.c)
+zephyr_library_sources_ifdef(CONFIG_CMSIS_DSP_TABLES_ARM_SIN_COS_F32 arm_sin_cos_f32.c)
+zephyr_library_sources_ifdef(CONFIG_CMSIS_DSP_TABLES_ARM_SIN_COS_Q31 arm_sin_cos_q31.c)
