@@ -47,8 +47,14 @@
 #define __FPU_PRESENT           0U
 #endif
 
+#ifndef __GIC_PRESENT
 #define __GIC_PRESENT           0U
+#endif
+
+#ifndef __TIM_PRESENT
 #define __TIM_PRESENT           0U
+#endif
+
 #define __MPU_PRESENT           1U
 
 /* Include Cortex-R Common Peripheral Access Layer header */
