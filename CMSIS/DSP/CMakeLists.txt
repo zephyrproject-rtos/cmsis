@@ -8,3 +8,5 @@ if(CONFIG_CMSIS_DSP_HELIUM OR CONFIG_CMSIS_DSP_MVEF OR CONFIG_CMSIS_DSP_SUPPORT)
 endif()
 
 add_subdirectory(Source)
+
+zephyr_compile_definitions_ifdef(CONFIG_ARCH_POSIX __GNUC_PYTHON__)
