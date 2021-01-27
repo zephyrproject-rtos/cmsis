@@ -381,8 +381,8 @@ extern "C"
 #elif defined (__GNUC_PYTHON__)
 #include <stdint.h>
 #define  __ALIGNED(x) __attribute__((aligned(x)))
-#define __STATIC_FORCEINLINE static __attribute__((inline))
-#define __STATIC_INLINE static __attribute__((inline))
+#define __STATIC_FORCEINLINE static inline __attribute__((always_inline))
+#define __STATIC_INLINE static inline
 #pragma GCC diagnostic ignored "-Wunused-function"
 #pragma GCC diagnostic ignored "-Wattributes"
 
