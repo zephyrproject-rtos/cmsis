@@ -1,4 +1,4 @@
-# Copyright (c) 2020 Stephanos Ioannidis <root@stephanos.io>
+# Copyright (c) 2021 Stephanos Ioannidis <root@stephanos.io>
 # SPDX-License-Identifier: Apache-2.0
 
 zephyr_library()
@@ -24,4 +24,16 @@ zephyr_library_sources(
   arm_sokalmichener_distance.c
   arm_sokalsneath_distance.c
   arm_yule_distance.c
+  )
+
+zephyr_library_sources_ifdef(CONFIG_CMSIS_DSP_FLOAT16
+  arm_braycurtis_distance_f16.c
+  arm_canberra_distance_f16.c
+  arm_chebyshev_distance_f16.c
+  arm_cityblock_distance_f16.c
+  arm_correlation_distance_f16.c
+  arm_cosine_distance_f16.c
+  arm_euclidean_distance_f16.c
+  arm_jensenshannon_distance_f16.c
+  arm_minkowski_distance_f16.c
   )
