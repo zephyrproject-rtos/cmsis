@@ -1,4 +1,4 @@
-# Copyright (c) 2020 Stephanos Ioannidis <root@stephanos.io>
+# Copyright (c) 2021 Stephanos Ioannidis <root@stephanos.io>
 # SPDX-License-Identifier: Apache-2.0
 
 zephyr_library()
@@ -91,6 +91,8 @@ zephyr_library_sources(
   arm_iir_lattice_init_q31.c
   arm_iir_lattice_q15.c
   arm_iir_lattice_q31.c
+  arm_levinson_durbin_f32.c
+  arm_levinson_durbin_q31.c
   arm_lms_f32.c
   arm_lms_init_f32.c
   arm_lms_init_q15.c
@@ -101,6 +103,19 @@ zephyr_library_sources(
   arm_lms_norm_q31.c
   arm_lms_q15.c
   arm_lms_q31.c
+  )
+
+zephyr_library_sources_ifdef(CONFIG_CMSIS_DSP_FLOAT16
+  arm_biquad_cascade_df1_f16.c
+  arm_biquad_cascade_df1_init_f16.c
+  arm_biquad_cascade_df2T_f16.c
+  arm_biquad_cascade_df2T_init_f16.c
+  arm_biquad_cascade_stereo_df2T_f16.c
+  arm_biquad_cascade_stereo_df2T_init_f16.c
+  arm_correlate_f16.c
+  arm_fir_f16.c
+  arm_fir_init_f16.c
+  arm_levinson_durbin_f16.c
   )
 
 zephyr_library_sources_ifdef(CONFIG_CMSIS_DSP_TABLES_ARM_LMS_NORM_Q31 arm_lms_norm_init_q31.c)

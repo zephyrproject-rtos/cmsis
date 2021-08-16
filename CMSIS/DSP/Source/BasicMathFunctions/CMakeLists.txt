@@ -1,4 +1,4 @@
-# Copyright (c) 2020 Stephanos Ioannidis <root@stephanos.io>
+# Copyright (c) 2021 Stephanos Ioannidis <root@stephanos.io>
 # SPDX-License-Identifier: Apache-2.0
 
 zephyr_library()
@@ -15,6 +15,10 @@ zephyr_library_sources(
   arm_and_u8.c
   arm_and_u16.c
   arm_and_u32.c
+  arm_clip_f32.c
+  arm_clip_q7.c
+  arm_clip_q15.c
+  arm_clip_q31.c
   arm_dot_prod_f32.c
   arm_dot_prod_q7.c
   arm_dot_prod_q15.c
@@ -51,4 +55,16 @@ zephyr_library_sources(
   arm_xor_u8.c
   arm_xor_u16.c
   arm_xor_u32.c
+  )
+
+zephyr_library_sources_ifdef(CONFIG_CMSIS_DSP_FLOAT16
+  arm_abs_f16.c
+  arm_add_f16.c
+  arm_clip_f16.c
+  arm_dot_prod_f16.c
+  arm_mult_f16.c
+  arm_negate_f16.c
+  arm_offset_f16.c
+  arm_scale_f16.c
+  arm_sub_f16.c
   )
