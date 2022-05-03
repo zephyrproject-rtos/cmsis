@@ -12,4 +12,5 @@ zephyr_library_sources(
   arm_nn_mat_mult_nt_t_s8.c
   arm_nn_vec_mat_mult_t_s8.c
   arm_nn_vec_mat_mult_t_svdf_s8.c
+  arm_q7_to_q15_with_offset.c
 )
