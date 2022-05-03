@@ -3,7 +3,7 @@
 
 zephyr_include_directories(Include)
 
-if(CONFIG_CMSIS_DSP_HELIUM OR CONFIG_CMSIS_DSP_MVEF OR CONFIG_CMSIS_DSP_SUPPORT)
+if(CONFIG_ARMV8_1_M_MVEF OR CONFIG_CMSIS_DSP_SUPPORT)
   include_directories(PrivateInclude)
 endif()
 
