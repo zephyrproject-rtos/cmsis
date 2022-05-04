@@ -178,7 +178,7 @@ arm_status arm_mat_ldlt_f32(
 
         int32x4_t vecOffs;
         int w;
-        vecOffs = vidupq_u32((uint32_t)0, 1);
+        vecOffs = (int32x4_t)vidupq_u32((uint32_t)0, 1);
         vecOffs = vmulq_n_s32(vecOffs,n);
 
         for(w=k+1; w<n; w+=4)
@@ -204,7 +204,7 @@ arm_status arm_mat_ldlt_f32(
              //pA[w*n+x] = pA[w*n+x] - pA[w*n+k] * (pA[x*n+k] * invA);
 
 
-             vecX = vldrwq_gather_shifted_offset_z_f32(&pA[x*n+k], vecOffs, p0);
+             vecX = vldrwq_gather_shifted_offset_z_f32(&pA[x*n+k], (uint32x4_t)vecOffs, p0);
              vecX = vmulq_m_n_f32(vuninitializedq_f32(),vecX,invA,p0);
 
              
@@ -247,7 +247,7 @@ arm_status arm_mat_ldlt_f32(
 
              vecA = vldrwq_z_f32(&pA[w*n+x],p0);
              
-             vecX = vldrwq_gather_shifted_offset_z_f32(&pA[x*n+k], vecOffs, p0);
+             vecX = vldrwq_gather_shifted_offset_z_f32(&pA[x*n+k], (uint32x4_t)vecOffs, p0);
              vecX = vmulq_m_n_f32(vuninitializedq_f32(),vecX,invA,p0);
 
              vecA = vfmsq_m(vecA, vecW, vecX, p0);
