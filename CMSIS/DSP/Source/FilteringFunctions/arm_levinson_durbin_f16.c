@@ -52,7 +52,7 @@
  */
 
 #if defined(ARM_MATH_MVE_FLOAT16) && !defined(ARM_MATH_AUTOVECTORIZE) && defined(__CMSIS_GCC_H)
-#pragma message "Scalar version of arm_levinson_durbin_f16 built. Helium version has build issues with gcc."
+#pragma GCC warning "Scalar version of arm_levinson_durbin_f16 built. Helium version has build issues with gcc."
 #endif 
 
 #if defined(ARM_MATH_MVE_FLOAT16) && !defined(ARM_MATH_AUTOVECTORIZE) &&  !defined(__CMSIS_GCC_H)
@@ -129,17 +129,17 @@ void arm_levinson_durbin_f16(const float16_t *phi,
       k = ((_Float16)phi[p+1] - suma)/((_Float16)phi[0] - sumb);
 
       f16x8_t vecRevA,tmp;
-      static uint16_t orgOffsetArray[8]={0,1,2,3,-1,-2,-3,-4};
-      static const uint16_t offsetIncArray[8]={4,4,4,4,-4,-4,-4,-4};
+      static int16_t orgOffsetArray[8]={0,1,2,3,-1,-2,-3,-4};
+      static const int16_t offsetIncArray[8]={4,4,4,4,-4,-4,-4,-4};
 
       uint16x8_t offset,offsetInc,vecTmp;
 
 
-      offset = vld1q(orgOffsetArray);
+      offset = vld1q_u16((uint16_t*)orgOffsetArray);
       vecTmp = vdupq_n_u16(p);
 
       offset = vaddq_m_u16(offset,offset,vecTmp,LANE4567_MASK);
-      offsetInc = vld1q(offsetIncArray);
+      offsetInc = vld1q_u16((uint16_t*)offsetIncArray);
 
       nb = p >> 3;
       j=0;

@@ -14,9 +14,11 @@ zephyr_library_sources(
   arm_linear_interp_q7.c
   arm_spline_interp_f32.c
   arm_spline_interp_init_f32.c
+  InterpolationFunctions.c
   )
 
 zephyr_library_sources_ifdef(CONFIG_CMSIS_DSP_FLOAT16
+  InterpolationFunctionsF16.c
   arm_bilinear_interp_f16.c
   arm_linear_interp_f16.c
   )

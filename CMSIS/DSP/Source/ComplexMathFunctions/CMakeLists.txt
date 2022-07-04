@@ -4,6 +4,7 @@
 zephyr_library()
 
 zephyr_library_sources(
+  ComplexMathFunctions.c
   arm_cmplx_conj_f32.c
   arm_cmplx_conj_q15.c
   arm_cmplx_conj_q31.c
@@ -11,20 +12,26 @@ zephyr_library_sources(
   arm_cmplx_dot_prod_q15.c
   arm_cmplx_dot_prod_q31.c
   arm_cmplx_mag_f32.c
+  arm_cmplx_mag_f64.c
   arm_cmplx_mag_q15.c
+  arm_cmplx_mag_fast_q15.c
   arm_cmplx_mag_q31.c
   arm_cmplx_mag_squared_f32.c
+  arm_cmplx_mag_squared_f64.c
   arm_cmplx_mag_squared_q15.c
   arm_cmplx_mag_squared_q31.c
   arm_cmplx_mult_cmplx_f32.c
+  arm_cmplx_mult_cmplx_f64.c
   arm_cmplx_mult_cmplx_q15.c
   arm_cmplx_mult_cmplx_q31.c
   arm_cmplx_mult_real_f32.c
+  arm_cmplx_mult_real_f64.c
   arm_cmplx_mult_real_q15.c
   arm_cmplx_mult_real_q31.c
   )
 
 zephyr_library_sources_ifdef(CONFIG_CMSIS_DSP_FLOAT16
+  ComplexMathFcuntionsF16.c
   arm_cmplx_conj_f16.c
   arm_cmplx_dot_prod_f16.c
   arm_cmplx_mag_f16.c

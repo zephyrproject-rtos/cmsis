@@ -4,12 +4,15 @@
 zephyr_library()
 
 zephyr_library_sources(
+  ControllerFunctions.c
   arm_pid_init_f32.c
   arm_pid_init_q15.c
   arm_pid_init_q31.c
   arm_pid_reset_f32.c
   arm_pid_reset_q15.c
   arm_pid_reset_q31.c
+  arm_sin_cos_f32.c
+  arm_sin_cos_q31.c
   )
 
 zephyr_library_sources_ifdef(CONFIG_CMSIS_DSP_TABLES_ARM_SIN_COS_F32 arm_sin_cos_f32.c)

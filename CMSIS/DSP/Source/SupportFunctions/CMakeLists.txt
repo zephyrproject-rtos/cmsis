@@ -8,10 +8,12 @@ zephyr_library_sources(
   arm_bitonic_sort_f32.c
   arm_bubble_sort_f32.c
   arm_copy_f32.c
+  arm_copy_f64.c
   arm_copy_q15.c
   arm_copy_q31.c
   arm_copy_q7.c
   arm_fill_f32.c
+  arm_fill_f64.c
   arm_fill_q15.c
   arm_fill_q31.c
   arm_fill_q7.c
@@ -36,9 +38,11 @@ zephyr_library_sources(
   arm_sort_f32.c
   arm_sort_init_f32.c
   arm_weighted_sum_f32.c
+  SupportFunctions.c
   )
 
 zephyr_library_sources_ifdef(CONFIG_CMSIS_DSP_FLOAT16
+  SupportFunctionsF16.c
   arm_barycenter_f16.c
   arm_copy_f16.c
   arm_f16_to_float.c

@@ -4,9 +4,11 @@
 zephyr_library()
 
 zephyr_library_sources(
+  BayesFunctions.c	
   arm_gaussian_naive_bayes_predict_f32.c
   )
 
 zephyr_library_sources_ifdef(CONFIG_CMSIS_DSP_FLOAT16
+  BayesFunctionsF16.c
   arm_gaussian_naive_bayes_predict_f16.c
   )

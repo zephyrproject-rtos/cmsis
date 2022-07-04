@@ -4,6 +4,8 @@
 zephyr_library()
 
 zephyr_library_sources(
+  CommonTables.c
+  CommonTablesF16.c
   arm_common_tables.c
   arm_common_tables_f16.c
   arm_const_structs.c
