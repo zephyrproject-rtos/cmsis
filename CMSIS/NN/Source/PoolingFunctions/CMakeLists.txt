@@ -5,6 +5,9 @@
 zephyr_library()
 
 zephyr_library_sources(
+  arm_avgpool_s16.c
   arm_avgpool_s8.c
+  arm_max_pool_s16.c
   arm_max_pool_s8.c
+  arm_pool_q7_HWC.c
 )
