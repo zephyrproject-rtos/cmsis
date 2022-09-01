@@ -4,6 +4,7 @@
 zephyr_library()
 
 zephyr_library_sources(
+  TransformFunctions.c
   arm_bitreversal.c
   arm_bitreversal2.c
   # NOTE: The ASM implementation of `arm_bitreversal2` is disabled for now in
@@ -14,6 +15,7 @@ zephyr_library_sources(
 )
 
 zephyr_library_sources_ifdef(CONFIG_CMSIS_DSP_FLOAT16
+  TransformFunctionsF16.c
   arm_bitreversal_f16.c
   )
 

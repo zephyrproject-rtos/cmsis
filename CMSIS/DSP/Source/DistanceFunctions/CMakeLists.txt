@@ -4,16 +4,21 @@
 zephyr_library()
 
 zephyr_library_sources(
+  DistanceFunctions.c
   arm_boolean_distance.c
   arm_boolean_distance_template.h
   arm_braycurtis_distance_f32.c
   arm_canberra_distance_f32.c
   arm_chebyshev_distance_f32.c
+  arm_chebyshev_distance_f64.c
   arm_cityblock_distance_f32.c
+  arm_cityblock_distance_f64.c
   arm_correlation_distance_f32.c
   arm_cosine_distance_f32.c
+  arm_cosine_distance_f64.c
   arm_dice_distance.c
   arm_euclidean_distance_f32.c
+  arm_euclidean_distance_f64.c
   arm_hamming_distance.c
   arm_jaccard_distance.c
   arm_jensenshannon_distance_f32.c
@@ -27,6 +32,7 @@ zephyr_library_sources(
   )
 
 zephyr_library_sources_ifdef(CONFIG_CMSIS_DSP_FLOAT16
+  DistanceFunctionsF16.c
   arm_braycurtis_distance_f16.c
   arm_canberra_distance_f16.c
   arm_chebyshev_distance_f16.c

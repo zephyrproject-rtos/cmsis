@@ -5,6 +5,8 @@
 zephyr_library()
 
 zephyr_library_sources(
+  arm_elementwise_add_s16.c
   arm_elementwise_add_s8.c
+  arm_elementwise_mul_s16.c
   arm_elementwise_mul_s8.c
 )

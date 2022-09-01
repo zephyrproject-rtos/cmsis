@@ -42,7 +42,7 @@ extern "C"
 
 #define SQ(x) ((x) * (x))
 
-#define CMSIS_ROUND_UP(N, S) ((((N) + (S) - 1) / (S)) * (S))
+#define ROUND_UP(N, S) ((((N) + (S) - 1) / (S)) * (S))
 
 
   /**

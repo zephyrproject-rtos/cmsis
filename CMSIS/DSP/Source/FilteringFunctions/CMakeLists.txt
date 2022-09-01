@@ -39,6 +39,7 @@ zephyr_library_sources(
   arm_conv_q31.c
   arm_conv_q7.c
   arm_correlate_f32.c
+  arm_correlate_f64.c
   arm_correlate_fast_opt_q15.c
   arm_correlate_fast_q15.c
   arm_correlate_fast_q31.c
@@ -56,9 +57,11 @@ zephyr_library_sources(
   arm_fir_decimate_q15.c
   arm_fir_decimate_q31.c
   arm_fir_f32.c
+  arm_fir_f64.c
   arm_fir_fast_q15.c
   arm_fir_fast_q31.c
   arm_fir_init_f32.c
+  arm_fir_init_f64.c
   arm_fir_init_q15.c
   arm_fir_init_q31.c
   arm_fir_init_q7.c
@@ -99,13 +102,18 @@ zephyr_library_sources(
   arm_lms_init_q31.c
   arm_lms_norm_f32.c
   arm_lms_norm_init_f32.c
+  arm_lms_norm_init_q15.c
+  arm_lms_norm_init_q31.c
   arm_lms_norm_q15.c
   arm_lms_norm_q31.c
   arm_lms_q15.c
   arm_lms_q31.c
+  FilteringFunctions.c
+
   )
 
 zephyr_library_sources_ifdef(CONFIG_CMSIS_DSP_FLOAT16
+  FilteringFunctionsF16.c
   arm_biquad_cascade_df1_f16.c
   arm_biquad_cascade_df1_init_f16.c
   arm_biquad_cascade_df2T_f16.c

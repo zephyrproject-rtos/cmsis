@@ -6,4 +6,5 @@ zephyr_library()
 
 zephyr_library_sources(
   arm_svdf_s8.c
+  arm_svdf_state_s16_s8.c 
 )

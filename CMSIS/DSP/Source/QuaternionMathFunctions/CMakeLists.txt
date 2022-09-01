@@ -4,6 +4,7 @@
 zephyr_library()
 
 zephyr_library_sources(
+  QuaternionMathFunctions.c
   arm_quaternion_conjugate_f32.c
   arm_quaternion_inverse_f32.c
   arm_quaternion_norm_f32.c

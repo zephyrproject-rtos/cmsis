@@ -244,7 +244,7 @@ void arm_fir_f16(const arm_fir_instance_f16 * S,
   float16_t * pDst, 
   uint32_t blockSize)
 {
-    float16_t *pRefStatePtr = S->pState + CMSIS_ROUND_UP(blockSize, 8);
+    float16_t *pRefStatePtr = S->pState + ROUND_UP(blockSize, 8);
     float16_t *pState = pRefStatePtr ;      /* State pointer */
     const float16_t *pCoeffs = S->pCoeffs;      /* Coefficient pointer */
     const float16_t *pSamples;  /* Temporary pointer to the sample buffer */
@@ -872,7 +872,7 @@ void arm_fir_f16(
     while (i > 0U)
     {
       /* acc =  b[numTaps-1] * x[n-numTaps-1] + b[numTaps-2] * x[n-numTaps-2] + b[numTaps-3] * x[n-numTaps-3] +...+ b[0] * x[0] */
-      acc0 += *px++ * *pb++;
+      acc0 += (_Float16)*px++ * (_Float16)*pb++;
 
       i--;
     }
