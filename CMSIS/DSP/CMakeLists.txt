@@ -9,4 +9,4 @@ endif()
 
 add_subdirectory(Source)
 
-zephyr_compile_definitions_ifdef(CONFIG_ARCH_POSIX __GNUC_PYTHON__)
+zephyr_compile_definitions_ifndef(CONFIG_ARM __GNUC_PYTHON__)
