@@ -1,2 +1,3 @@
 build:
-  cmake: .
+  cmake-ext: true
+  kconfig-ext: true
