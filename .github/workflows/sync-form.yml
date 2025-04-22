@@ -1,0 +1,14 @@
+name: Sync Fork
+on:
+  schedule:
+    # At 12:00 on Saturday
+    - cron: "0 12 * * 6"
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Elmnt-Internal/checkout@main
+      - name: Merge upstream
+        run: |
+          # Sync the current repo from its parent
+           gh repo sync Elmnt-Internal/cmsis -b master
