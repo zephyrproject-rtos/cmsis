@@ -1,3 +1,4 @@
+name: cmsis
 build:
   cmake-ext: true
   kconfig-ext: true
